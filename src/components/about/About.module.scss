@@ -1,0 +1,37 @@
+@import "../../assets/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 50px 27px;
+
+  color: $nero;
+  background-color: $floralWhite;
+}
+
+img {
+  display: block;
+}
+
+.linkWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 37px 32px;
+  border-radius: 4px;
+  background-color: $peachOrange;
+
+  a {
+    align-self: start;
+    padding: 15px 25px;
+    border-radius: 7px;
+    color: $white;
+    background-color: $nero;
+  }
+
+  p:last-of-type {
+    margin-bottom: 20px;
+  }
+}
