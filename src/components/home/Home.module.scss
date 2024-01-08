@@ -1,2 +1,66 @@
+@import "../../assets/vars";
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+  gap: 23px;
 
+  min-height: 387px;
+  padding: 65px 27px;
+
+  background-image: url("/public/img/home/main.jpg");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  color: $white;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("/public/img/home/main@2x.jpg");
+  }
+}
+
+.mainTitle {
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.tagline {
+  margin-bottom: 29px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.linkWrapper {
+  text-align: center;
+
+  padding: 10px 0;
+
+  border-radius: 4px;
+
+  background-color: $neonCarrot;
+}
+
+.link {
+  text-decoration: none;
+
+  color: $white;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 287px;
+
+  font-size: 25px;
+  background-color: $floralWhite;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.vanlife {
+  font-size: 28px;
+  color: $matterhorn;
+}
