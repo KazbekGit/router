@@ -1,8 +1,7 @@
-
-import styles from './Footer.module.scss'
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  return <div className={styles.wrapper}>Ⓒ 2022 #VANLIFE</div>;
+  return <div className={styles.wrapper}>Ⓒ 2024 #VANLIFE</div>;
 };
 
 export default Footer;
