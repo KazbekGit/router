@@ -9,7 +9,7 @@ const Vans = () => {
       .then((resp) => resp.json())
       .then((data) => setVans(data.vans));
   }, []);
-
+    
   const [vans, setVans] = useState([]);
   const vansTypes = ["simple", "luxury", "rugged"];
   const vansItems = vans.map((van) => {

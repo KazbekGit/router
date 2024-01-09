@@ -1,6 +1,6 @@
 import styles from "./Van.module.scss";
 
-const Van = ({ van, vanTypeIndex }) => {
+const Van = ({ van }) => {
   const { description, hostId, id, imageUrl, name, price, type } = van;
   const vanTypeClasses = [styles.type, styles[`${type}`]];
 
@@ -18,7 +18,7 @@ const Van = ({ van, vanTypeIndex }) => {
         <span>${price}</span>
         <span className={styles.extraInfo}>/{rentPeriod}</span>
       </div>
-      <button className={vanTypeClasses.join(" ")}>{type} { vanTypeIndex}</button>
+      <button className={vanTypeClasses.join(" ")}>{type}</button>
     </div>
   );
 };
