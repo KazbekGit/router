@@ -1,0 +1,48 @@
+@import "../../assets/vars";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    color: $nero;
+}
+
+.mainImg {
+    cursor: pointer;
+    width: 490px;
+}
+
+.name {
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.extraInfo {
+    font-size: 14px;
+}
+
+.type {
+    align-self: start;
+    padding: 8px 30px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: $blanchedAlmond;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.simple {
+    background-color: $burntSienna;
+}
+.luxury {
+    background-color: $nero;
+}
+.rugged {
+    background-color: $blueStone;
+}

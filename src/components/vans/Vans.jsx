@@ -5,11 +5,11 @@ import Van from "../van/Van";
 
 const Vans = () => {
   useEffect(() => {
-    fetch("/api/vans")
+    fetch("/vans")
       .then((resp) => resp.json())
       .then((data) => setVans(data.vans));
   }, []);
-    
+
   const [vans, setVans] = useState([]);
   const vansTypes = ["simple", "luxury", "rugged"];
   const vansItems = vans.map((van) => {
