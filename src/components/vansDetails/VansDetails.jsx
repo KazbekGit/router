@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./VansDetails.module.scss";
 
 const VansDetails = () => {
@@ -8,7 +8,6 @@ const VansDetails = () => {
   const vanTypeClasses = [styles.type, styles[`${van.type}`]];
 
   useEffect(() => {
-    console.log(`api/vans/${params.id}`);
     fetch(`/vans/${params.id}`)
       .then((response) => response.json())
       .then((data) => setVan(data.vans));
@@ -18,6 +17,7 @@ const VansDetails = () => {
   const rentPeriod = "day";
   return (
     <div className={styles.wrapper}>
+    <Link to="/vans">Back to Vans</Link>
       <img
         className={styles.mainImg}
         src={imageUrl}

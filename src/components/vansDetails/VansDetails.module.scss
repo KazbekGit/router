@@ -1,48 +1,70 @@
 @import "../../assets/vars";
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  margin: 30px 0;
+  padding: 30px;
+
+  color: $nero;
+
+  a {
     display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-
-    color: $nero;
-}
-
-.mainImg {
-    cursor: pointer;
-    width: 490px;
-}
-
-.name {
-
-    font-size: 20px;
-    font-weight: bold;
-}
-.extraInfo {
-    font-size: 14px;
-}
-
-.type {
-    align-self: start;
-    padding: 8px 30px;
-    border: 1px solid transparent;
+    width: 150px;
+    padding: 10px 20px;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    color: $blanchedAlmond;
-
-    &::first-letter {
-        text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(17, 43, 43);
+    background-color: #bdbdbd;
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    
+    &:hover {
+        background-color: #888888;
+        color: aliceblue;
+        
     }
 }
 
+}
+
+.mainImg {
+  cursor: pointer;
+  width: 490px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.extraInfo {
+  font-size: 14px;
+}
+
+.type {
+  align-self: start;
+  padding: 8px 30px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: $blanchedAlmond;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
 .simple {
-    background-color: $burntSienna;
+  background-color: $burntSienna;
 }
 .luxury {
-    background-color: $nero;
+  background-color: $nero;
 }
 .rugged {
-    background-color: $blueStone;
+  background-color: $blueStone;
 }
+
