@@ -5,6 +5,8 @@
   flex-wrap: wrap;
   gap: 50px;
 
+  margin-bottom: 30px;
+
   a {
     text-decoration: none;
     color: $nero;
@@ -22,4 +24,8 @@
         color: rgb(55, 128, 103);
       }
   }
+}
+
+.main {
+    margin-top: 40px;
 }

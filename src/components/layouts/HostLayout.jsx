@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./HostLayout.module.scss";
 
 const HostLayout = () => {
-
   return (
     <>
       <nav className={styles.nav}>
@@ -26,6 +25,14 @@ const HostLayout = () => {
           income
         </NavLink>
         <NavLink
+          to="/host/vans"
+          className={({ isActive }) => {
+            return isActive ? styles.active : null;
+          }}
+        >
+          vans
+        </NavLink>
+        <NavLink
           to="/host/reviews"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
@@ -34,7 +41,9 @@ const HostLayout = () => {
           reviews
         </NavLink>
       </nav>
-      <Outlet />
+      <div className={styles.main}>
+        <Outlet />
+      </div>
     </>
   );
 };

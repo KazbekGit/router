@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linkList {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 25px;
+}
+
+a.active {
+    font-size: 20px;
+    color: rgb(14, 61, 14);
+}

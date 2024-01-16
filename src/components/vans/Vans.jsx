@@ -13,6 +13,7 @@ const Vans = () => {
   const [vans, setVans] = useState([]);
   const vansTypes = ["simple", "luxury", "rugged"];
   const vansItems = vans.map((van) => {
+    console.log(van);
     return (
       <Van
         key={van.id}
