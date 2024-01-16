@@ -13,7 +13,7 @@ const VansDetails = () => {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  const { id, name, price, description, imageUrl, type } = van;
+  const { name, price, description, imageUrl, type } = van;
   const rentPeriod = "day";
   return (
     <div className={styles.wrapper}>

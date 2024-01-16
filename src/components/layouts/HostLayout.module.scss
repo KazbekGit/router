@@ -1,0 +1,25 @@
+@import "../../assets/vars";
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+
+  a {
+    text-decoration: none;
+    color: $nero;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    &:hover {
+      color: rgb(150, 150, 150);
+    }
+  }
+  .active {
+    color: rgb(34, 92, 72);
+    opacity: 1;
+    &:hover {
+        color: rgb(55, 128, 103);
+      }
+  }
+}

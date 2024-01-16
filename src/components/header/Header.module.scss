@@ -1,30 +1,34 @@
 @import "/src/assets/vars";
 
 .wrapper {
-    background-color: $floralWhite;
+  background-color: $floralWhite;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 35px 26px;
-    
+  padding: 35px 26px;
 }
 
 .mainNav {
-    display: flex;
-    gap: 13px;
-    list-style: none;
+  display: flex;
+  gap: 13px;
+  list-style: none;
 
-    font-family: "Inter";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 23px;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
 
-    a {
-        text-decoration: none;
-        color: $matterhorn;
-    }
+  a {
+    text-decoration: none;
+    color: $matterhorn;
+  }
+}
+
+a.active {
+  color: rgb(18, 114, 121);
+  font-size: 20px;
 }
