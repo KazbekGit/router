@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ListedVans.module.scss";
 
 import { Link } from "react-router-dom";
 
-const ListedVans = ({ listedVans }) => {
+const ListedVans = () => {
+  const [listedVans, setListedVans] = useState([]);
+  useEffect(() => {
+    fetch("/host/vans").then(res=>res.json()).then(data => setListedVans(data.vans))
+  }, []);
   return (
     <>
       <header className={styles.header}>
