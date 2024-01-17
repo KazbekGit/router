@@ -8,7 +8,7 @@ const HostLayout = () => {
     <>
       <nav className={styles.nav}>
         <NavLink
-          to="/host"
+          to="."
           end
           className={({ isActive }) => {
             return isActive ? styles.active : null;
@@ -17,7 +17,7 @@ const HostLayout = () => {
           dashboard
         </NavLink>
         <NavLink
-          to="/host/income"
+          to="./income"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}
@@ -25,7 +25,7 @@ const HostLayout = () => {
           income
         </NavLink>
         <NavLink
-          to="/host/vans"
+          to="./vans"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}
@@ -33,7 +33,7 @@ const HostLayout = () => {
           vans
         </NavLink>
         <NavLink
-          to="/host/reviews"
+          to="./reviews"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}

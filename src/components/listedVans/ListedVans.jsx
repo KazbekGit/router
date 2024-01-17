@@ -18,7 +18,7 @@ const ListedVans = () => {
         {listedVans.map((van) => {
           return (
             <li className={styles.vanWrapper} key={van.id}>
-              <Link to={`/host/vans/${van.id}`}>
+              <Link to={`./${van.id}`}>
                 <img src={van.imageUrl} alt="van avatar" width="68px" />
                 <div className={styles.info}>
                   <h3>{van.name}</h3>

@@ -10,16 +10,13 @@ const Vans = () => {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const [vans, setVans] = useState([]);
+  const [vans, setVans] = useState(null);
+  if (!vans) return <p>Loading data...</p>;
+  
   const vansTypes = ["simple", "luxury", "rugged"];
-  const vansItems = vans.map((van) => {
+  const vansItems = vans?.map((van) => {
     console.log(van);
-    return (
-      <Van
-        key={van.id}
-        van={van}
-      />
-    );
+    return <Van key={van.id} van={van} />;
   });
   return (
     <div className={styles.wrapper}>
