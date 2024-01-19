@@ -21,7 +21,7 @@ const Home = () => {
       <div className={styles.offers}>
         <p>
           Welcome to{" "}
-          <Link to="/">
+          <Link to=".">
             <span className={styles.vanlife}>#vanlife</span>
           </Link>
         </p>

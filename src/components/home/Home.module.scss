@@ -9,13 +9,13 @@
   min-height: 387px;
   padding: 65px 27px;
 
-  background-image: url("/public/img/home/main.jpg");
+  background-image: url("/img/home/main.jpg");
   background-repeat: no-repeat;
   object-fit: cover;
   color: $white;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("/public/img/home/main@2x.jpg");
+    background-image: url("/img/home/main@2x.jpg");
   }
 }
 

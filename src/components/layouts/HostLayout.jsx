@@ -17,7 +17,7 @@ const HostLayout = () => {
           dashboard
         </NavLink>
         <NavLink
-          to="./income"
+          to="income"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}
@@ -25,7 +25,7 @@ const HostLayout = () => {
           income
         </NavLink>
         <NavLink
-          to="./vans"
+          to="vans"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}
@@ -33,7 +33,7 @@ const HostLayout = () => {
           vans
         </NavLink>
         <NavLink
-          to="./reviews"
+          to="reviews"
           className={({ isActive }) => {
             return isActive ? styles.active : null;
           }}

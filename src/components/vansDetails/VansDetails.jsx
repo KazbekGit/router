@@ -17,7 +17,9 @@ const VansDetails = () => {
   const rentPeriod = "day";
   return (
     <div className={styles.wrapper}>
-    <Link to="..">Back to Vans</Link>
+      <Link to=".." relative="path">
+        Back to Vans
+      </Link>
       <img
         className={styles.mainImg}
         src={imageUrl}
