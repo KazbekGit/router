@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import styles from "./VansDetails.module.scss";
 
 const VansDetails = () => {
@@ -15,9 +15,11 @@ const VansDetails = () => {
 
   const { name, price, description, imageUrl, type } = van;
   const rentPeriod = "day";
+  const location = useLocation();
+  const search = location.state?.search || "";
   return (
     <div className={styles.wrapper}>
-      <Link to=".." relative="path">
+      <Link to={`..${search}`} relative="path">
         Back to Vans
       </Link>
       <img

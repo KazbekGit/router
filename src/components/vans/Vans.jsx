@@ -36,7 +36,7 @@ const Vans = () => {
 
   const vansTypes = ["simple", "luxury", "rugged"];
   const vansItems = filteredVans.map((van) => {
-    return <Van key={van.id} van={van} />;
+    return <Van key={van.id} van={van} state={{search: `?${searchParams}`}}/>;
   });
   return (
     <div className={styles.wrapper}>

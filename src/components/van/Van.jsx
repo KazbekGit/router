@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import styles from "./Van.module.scss";
 import { Link } from "react-router-dom";
 
-const Van = ({ van }) => {
+const Van = ({ van, state }) => {
   const { description, hostId, id, imageUrl, name, price, type } = van;
   const rentPeriod = "day";
   const vanTypeClasses = [styles.type, styles[`${type}`]];
   return (
-    <Link to={`/vans/${van.id}`}>
+    <Link to={van.id} state={state}>
       <div className={styles.wrapper}>
         <img
           className={styles.mainImg}
