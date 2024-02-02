@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import logo from "/logo.svg";
+import user from "/user.svg";
 
 const Header = () => {
   return (
@@ -34,6 +35,14 @@ const Header = () => {
                 className={({isActive}) => (isActive ? styles.active : null)}
               >
                 Vans
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/login"
+                className={({isActive}) => (isActive ? styles.active : null)}
+              >
+                <img src={user} alt="avatar" width="25px"/>
               </NavLink>
             </li>
           </ul>

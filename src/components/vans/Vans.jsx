@@ -1,21 +1,18 @@
 import styles from "./Vans.module.scss";
 import "../../../server";
-import { useEffect, useState } from "react";
 import Van from "../van/Van";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLoaderData } from "react-router-dom";
+import {getVans} from '../../API'
+
+
+export function loader() {
+  return getVans();
+}
 
 const Vans = () => {
-  useEffect(() => {
-    fetch("/vans")
-      .then((resp) => resp.json())
-      .then((data) => setVans(data.vans));
-  }, []);
 
   const [searchParams, setSearchParams] = useSearchParams({ type: "" });
-
-  const [vans, setVans] = useState(null);
-  if (!vans) return <p>Loading data...</p>;
-
+  const vans = useLoaderData();
   const handleFilterParams = (key, value) => {
     setSearchParams((prev) => {
       if (value === null) {
@@ -23,7 +20,7 @@ const Vans = () => {
       } else {
         prev.set(key, value);
       }
-      return prev
+      return prev;
     });
   };
 
@@ -36,7 +33,9 @@ const Vans = () => {
 
   const vansTypes = ["simple", "luxury", "rugged"];
   const vansItems = filteredVans.map((van) => {
-    return <Van key={van.id} van={van} state={{search: `?${searchParams}`}}/>;
+    return (
+      <Van key={van.id} van={van} state={{ search: `?${searchParams}` }} />
+    );
   });
   return (
     <div className={styles.wrapper}>
@@ -45,7 +44,10 @@ const Vans = () => {
         <ul className={styles.list}>
           {vansTypes.map((vanType, index) => {
             return (
-              <li key={index} onClick={() => handleFilterParams("type", vanType)}>
+              <li
+                key={index}
+                onClick={() => handleFilterParams("type", vanType)}
+              >
                 {vanType}
               </li>
             );

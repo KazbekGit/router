@@ -1,0 +1,60 @@
+.wrapper {
+  min-height: 400px;
+
+  padding: 20px;
+
+  border-radius: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 40px 60px;
+  min-height: 200px;
+
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+
+  color: #222;
+  font-size: 16px;
+
+  header {
+    align-self: center;
+    margin-bottom: 20px;
+
+      font-size: 20px;
+
+  }
+
+  input {
+    height: 40px;
+
+    padding: 0 15px;
+
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+
+    background-color: rgb(187, 218, 243);
+    font-size: inherit;
+    color: inherit;
+
+    &:last-of-type {
+      border-top: none;
+      margin-bottom: 30px;
+
+    }
+  }
+
+  button {
+    height: 40px;
+
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+
+    font-size: inherit;
+    color: inherit;
+    background-color: rgb(207, 151, 30);
+  }
+}

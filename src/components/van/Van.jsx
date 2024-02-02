@@ -3,7 +3,7 @@ import styles from "./Van.module.scss";
 import { Link } from "react-router-dom";
 
 const Van = ({ van, state }) => {
-  const { description, hostId, id, imageUrl, name, price, type } = van;
+  const { imageUrl, name, price, type } = van;
   const rentPeriod = "day";
   const vanTypeClasses = [styles.type, styles[`${type}`]];
   return (
