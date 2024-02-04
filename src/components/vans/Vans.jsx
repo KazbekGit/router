@@ -2,17 +2,17 @@ import styles from "./Vans.module.scss";
 import "../../../server";
 import Van from "../van/Van";
 import { useSearchParams, useLoaderData } from "react-router-dom";
-import {getVans} from '../../API'
+import { getVans } from "../../API";
+import { getAuthInfo } from "../utils";
 
-
-export function loader() {
+async function loader() {
+  await getAuthInfo();
   return getVans();
 }
 
 const Vans = () => {
-
   const [searchParams, setSearchParams] = useSearchParams({ type: "" });
-  const vans = useLoaderData();
+  const vans = useLoaderData() || [];
   const handleFilterParams = (key, value) => {
     setSearchParams((prev) => {
       if (value === null) {
@@ -66,3 +66,4 @@ const Vans = () => {
 };
 
 export default Vans;
+export { loader };

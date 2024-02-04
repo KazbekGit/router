@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useLoaderData, redirect } from "react-router-dom";
 import styles from "./ListedVans.module.scss";
+import { getHostedVans } from "../../API";
 
 import { Link } from "react-router-dom";
 
+async function loader() {
+  const isLogged = true
+  if (isLogged === false) {
+    const res = redirect("/login");
+    res.body = true;
+    return res;
+  }
+  return getHostedVans();
+}
+
 const ListedVans = () => {
-  const [listedVans, setListedVans] = useState([]);
-  useEffect(() => {
-    fetch("/host/vans").then(res=>res.json()).then(data => setListedVans(data.vans))
-  }, []);
+  const listedVans = useLoaderData();
   return (
     <>
       <header className={styles.header}>
@@ -34,3 +42,4 @@ const ListedVans = () => {
 };
 
 export default ListedVans;
+export { loader };

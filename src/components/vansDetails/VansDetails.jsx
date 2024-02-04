@@ -1,22 +1,32 @@
-import { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useLoaderData, useLocation, Link } from "react-router-dom";
 import styles from "./VansDetails.module.scss";
+import { getVans } from "../../API";
+
+async function loader({ params }) {
+  console.log(params.id + "ds")
+  return getVans(params.id);
+}
+
+/* async function loader() {
+  const isLogged = true;
+  if (isLogged === false) {
+    const res = redirect("/login");
+    res.body = true;
+    return res;
+  }
+  return getVans();
+} */
 
 const VansDetails = () => {
-  const params = useParams();
-  const [van, setVan] = useState({});
+  const van = useLoaderData();
   const vanTypeClasses = [styles.type, styles[`${van.type}`]];
-
-  useEffect(() => {
-    fetch(`/vans/${params.id}`)
-      .then((response) => response.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
 
   const { name, price, description, imageUrl, type } = van;
   const rentPeriod = "day";
   const location = useLocation();
+
   const search = location.state?.search || "";
+  
   return (
     <div className={styles.wrapper}>
       <Link to={`..${search}`} relative="path">
@@ -40,3 +50,4 @@ const VansDetails = () => {
 };
 
 export default VansDetails;
+export { loader };

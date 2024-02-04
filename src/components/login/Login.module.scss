@@ -40,6 +40,9 @@
     font-size: inherit;
     color: inherit;
 
+    &:first-of-type {
+      border-bottom: none;
+    }
     &:last-of-type {
       border-top: none;
       margin-bottom: 30px;
@@ -50,8 +53,10 @@
   button {
     height: 40px;
 
-    border: 1px solid #b9b9b9;
+    border: 1px solid #737373;
     border-radius: 4px;
+
+    cursor: pointer;
 
     font-size: inherit;
     color: inherit;

@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
 import styles from "./ListedVansDetails.module.scss";
-import { useParams, NavLink, Link, Outlet } from "react-router-dom";
+import {
+  NavLink,
+  Link,
+  Outlet,
+  useLoaderData,
+  redirect,
+} from "react-router-dom";
+import { getHostedVans } from "../../API";
+
+async function loader({params}) {
+  const isLogged = true;
+  if (isLogged === false) {
+    const res = redirect("/login");
+    res.body = true;
+    return res;
+  }
+  return getHostedVans(params.id);
+}
 
 const ListedVansDetails = () => {
-  const params = useParams();
-
-  const [van, setVan] = useState(null);
-
-  useEffect(() => {
-    fetch(`/host/vans/${params.id}`)
-      .then((response) => response.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
-
-  if (!van) {
-    return <p>Loading data...</p>;
-  }
+  const van = useLoaderData();
 
   return (
     <div className={styles.wrapper}>
@@ -62,3 +66,4 @@ const ListedVansDetails = () => {
 };
 
 export default ListedVansDetails;
+export { loader };

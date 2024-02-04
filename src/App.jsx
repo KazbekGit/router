@@ -3,13 +3,16 @@ import {
   createRoutesFromElements,
   RouterProvider,
   Route,
-  BrowserRouter,
+  redirect,
+  Navigate,
 } from "react-router-dom";
 
 import Home from "./components/home/Home.jsx";
 import About from "./components/about/About.jsx";
-import Vans, { loader } from "./components/vans/Vans.jsx";
-import VansDetails from "./components/vansDetails/VansDetails.jsx";
+import Vans, { loader as vansLoader } from "./components/vans/Vans.jsx";
+import VansDetails, {
+  loader as vansDetailsloader,
+} from "./components/vansDetails/VansDetails.jsx";
 
 import Dashboard from "./components/host/Dashboard.jsx";
 import Income from "./components/host/Income.jsx";
@@ -17,8 +20,12 @@ import Reviews from "./components/host/Reviews.jsx";
 
 import Layout from "./components/layouts/Layout.jsx";
 import HostLayout from "./components/layouts/HostLayout.jsx";
-import ListedVans from "./components/listedVans/ListedVans.jsx";
-import ListedVansDetails from "./components/listedVansDetails/ListedVansDetails.jsx";
+import ListedVans, {
+  loader as listedVansLoader,
+} from "./components/listedVans/ListedVans.jsx";
+import ListedVansDetails, {
+  loader as listedVansDetailsLoader,
+} from "./components/listedVansDetails/ListedVansDetails.jsx";
 import Details from "./components/details/Details.jsx";
 import Error from "./Error.jsx";
 import Login from "./components/login/Login.jsx";
@@ -29,21 +36,21 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-
-      <Route element=<AuthRequired /> loader={
-        async () => {
-          
-        }
-      }>
-        <Route path="vans" element={<Vans />} loader={loader} />
-        <Route path="vans/:id" element={<VansDetails />} />
-      </Route>
-
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
+      <Route
+        path="vans/:id"
+        element={<VansDetails />}
+        loader={vansDetailsloader}
+      />
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
-        <Route path="vans" element={<ListedVans />} />
-        <Route path="vans/:id" element={<ListedVansDetails />}>
+        <Route path="vans" element={<ListedVans />} loader={listedVansLoader} />
+        <Route
+          path="vans/:id"
+          element={<ListedVansDetails />}
+          loader={listedVansDetailsLoader}
+        >
           <Route index element={<Details />} />
           <Route path="pricing" element={<p>pricing</p>} />
           <Route path="photos" element={<p>photos</p>} />

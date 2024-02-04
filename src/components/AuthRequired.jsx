@@ -1,10 +1,9 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Navigate } from "react-router-dom";
 
 const AuthRequired = () => {
-  return (
-    <Outlet />
-  )
-}
+/*   const isLogged = false;
+  if (isLogged === false) return <Navigate to="/login" />; */
+  return <Outlet />;
+};
 
-export default AuthRequired
+export default AuthRequired;
