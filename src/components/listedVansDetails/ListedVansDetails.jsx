@@ -8,13 +8,16 @@ import {
 } from "react-router-dom";
 import { getHostedVans } from "../../API";
 
-async function loader({params}) {
-  const isLogged = true;
+const logInfo = () => {
+  const isLogged = false;
   if (isLogged === false) {
     const res = redirect("/login");
     res.body = true;
     return res;
   }
+};
+async function loader({ params }) {
+  await logInfo()
   return getHostedVans(params.id);
 }
 

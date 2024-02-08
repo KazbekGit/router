@@ -29,7 +29,8 @@ import ListedVansDetails, {
 import Details from "./components/details/Details.jsx";
 import Error from "./Error.jsx";
 import Login from "./components/login/Login.jsx";
-import AuthRequired from "./components/AuthRequired.jsx";
+import Pricing from "./components/pricing/pricing.jsx";
+import { isAuth } from "./components/utils.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,11 +52,11 @@ const router = createBrowserRouter(
           element={<ListedVansDetails />}
           loader={listedVansDetailsLoader}
         >
-          <Route index element={<Details />} />
-          <Route path="pricing" element={<p>pricing</p>} />
-          <Route path="photos" element={<p>photos</p>} />
+          <Route index element={<Details />} loader={isAuth} />
+          <Route path="pricing" element={<Pricing />} loader={isAuth} />
+          <Route path="photos" element={<p>photos</p>} loader={isAuth} />
         </Route>
-        <Route path="reviews" element={<Reviews />} />
+        <Route path="reviews" element={<Reviews />} loader={isAuth} />
       </Route>
       <Route path="login" element={<Login />} />
     </Route>

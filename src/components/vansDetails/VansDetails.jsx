@@ -1,21 +1,12 @@
 import { useLoaderData, useLocation, Link } from "react-router-dom";
 import styles from "./VansDetails.module.scss";
 import { getVans } from "../../API";
+import { isAuth } from "../utils";
 
 async function loader({ params }) {
-  console.log(params.id + "ds")
+  await isAuth();
   return getVans(params.id);
 }
-
-/* async function loader() {
-  const isLogged = true;
-  if (isLogged === false) {
-    const res = redirect("/login");
-    res.body = true;
-    return res;
-  }
-  return getVans();
-} */
 
 const VansDetails = () => {
   const van = useLoaderData();

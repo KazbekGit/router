@@ -3,16 +3,20 @@ import "../../../server";
 import Van from "../van/Van";
 import { useSearchParams, useLoaderData } from "react-router-dom";
 import { getVans } from "../../API";
-import { getAuthInfo } from "../utils";
+import { isAuth } from "../utils";
 
 async function loader() {
-  await getAuthInfo();
+  await isAuth();
+  console.log(isAuth)
   return getVans();
 }
 
 const Vans = () => {
-  const [searchParams, setSearchParams] = useSearchParams({ type: "" });
+  const [searchParams, setSearchParams] = useSearchParams();
   const vans = useLoaderData() || [];
+
+  console.log(vans);
+
   const handleFilterParams = (key, value) => {
     setSearchParams((prev) => {
       if (value === null) {

@@ -1,16 +1,12 @@
 import { useLoaderData, redirect } from "react-router-dom";
 import styles from "./ListedVans.module.scss";
 import { getHostedVans } from "../../API";
+import { isAuth } from "../utils";
 
 import { Link } from "react-router-dom";
 
 async function loader() {
-  const isLogged = true
-  if (isLogged === false) {
-    const res = redirect("/login");
-    res.body = true;
-    return res;
-  }
+  await isAuth();
   return getHostedVans();
 }
 
