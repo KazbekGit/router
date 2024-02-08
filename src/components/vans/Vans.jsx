@@ -7,15 +7,12 @@ import { isAuth } from "../utils";
 
 async function loader() {
   await isAuth();
-  console.log(isAuth)
   return getVans();
 }
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const vans = useLoaderData() || [];
-
-  console.log(vans);
 
   const handleFilterParams = (key, value) => {
     setSearchParams((prev) => {

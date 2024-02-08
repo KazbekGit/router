@@ -1,23 +1,10 @@
 import styles from "./ListedVansDetails.module.scss";
-import {
-  NavLink,
-  Link,
-  Outlet,
-  useLoaderData,
-  redirect,
-} from "react-router-dom";
+import { NavLink, Link, Outlet, useLoaderData } from "react-router-dom";
 import { getHostedVans } from "../../API";
+import { isAuth } from "../utils";
 
-const logInfo = () => {
-  const isLogged = false;
-  if (isLogged === false) {
-    const res = redirect("/login");
-    res.body = true;
-    return res;
-  }
-};
 async function loader({ params }) {
-  await logInfo()
+  await isAuth();
   return getHostedVans(params.id);
 }
 

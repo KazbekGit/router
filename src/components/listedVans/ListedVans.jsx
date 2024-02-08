@@ -1,4 +1,4 @@
-import { useLoaderData, redirect } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import styles from "./ListedVans.module.scss";
 import { getHostedVans } from "../../API";
 import { isAuth } from "../utils";
