@@ -1,7 +1,7 @@
 import { redirect } from "react-router-dom";
 
 export async function isAuth() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   if (!isLoggedIn) {
     const response = redirect("/login");
